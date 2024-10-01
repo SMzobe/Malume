@@ -1,0 +1,20 @@
+import React, { useState } from 'react';
+import ChildPickupStatus from './ChildPickupStatus.js';
+
+const DriverDashboard = () => {
+  const [children, setChildren] = useState([
+    { id: 1, name: 'John Doe', status: 'waiting' },
+    { id: 2, name: 'Jane Smith', status: 'waiting' },
+  ]);
+
+  return (
+    <div>
+      <h1>Driver Dashboard</h1>
+      {children.map((child) => (
+        <ChildPickupStatus key={child.id} child={child} />
+      ))}
+    </div>
+  );
+}
+
+export default DriverDashboard;

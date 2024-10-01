@@ -1,0 +1,21 @@
+import React, { useState, useEffect } from 'react';
+
+const CountdownTimer = ({ timeRemaining }) => {
+  const [seconds, setSeconds] = useState(timeRemaining);
+
+  useEffect(() => {
+    if (seconds > 0) {
+      const timer = setTimeout(() => setSeconds(seconds - 1), 1000);
+      return () => clearTimeout(timer);
+    } else if (seconds === 30) {
+      // Play sound when 30 seconds remain
+      new Audio('/alert-sound.mp3').play();
+    }
+  }, [seconds]);
+
+  return <div>Time until arrival: {seconds}
+  </div>
+};
+
+export default CountdownTimer;
+

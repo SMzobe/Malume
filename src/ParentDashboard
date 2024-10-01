@@ -1,0 +1,17 @@
+import React from 'react';
+import CountdownTimer from './CountdownTimer';
+import DriverLocation from './DriverLocation';
+import Notifications from './Notifications';
+
+const ParentDashboard = () => {
+  return (
+    <div>
+      <h1>Parent Dashboard</h1>
+      <DriverLocation />
+      <CountdownTimer />
+      <Notifications />
+    </div>
+  );
+};
+
+export default ParentDashboard;
